@@ -16,24 +16,17 @@ const statusLabels = {
 const gameIcons: Record<string, React.ReactNode> = {
   seedling: (
     <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11">
-      {/* Seed shape - pointed top, rounded bottom */}
+      {/* Seed body - fat teardrop, pointed top */}
       <path
-        d="M12 2C12 2 7 8 7 14C7 18 9 21 12 21C15 21 17 18 17 14C17 8 12 2 12 2Z"
+        d="M12 3C12 3 6 9 6 14.5C6 18.5 8.5 21 12 21C15.5 21 18 18.5 18 14.5C18 9 12 3 12 3Z"
         fill="#22c55e"
       />
-      {/* Seed ridge/line */}
-      <path
-        d="M12 4C12 4 12 10 12 19"
-        stroke="#16a34a"
-        strokeWidth="0.75"
-        opacity="0.5"
-      />
-      {/* Highlight */}
-      <path
-        d="M10 8C10 8 8.5 12 9 16C9 16 10 13 10 8Z"
-        fill="#4ade80"
-        opacity="0.4"
-      />
+      {/* Vertical stripes */}
+      <path d="M9 8C8.5 11 8.5 15 9 18" stroke="#16a34a" strokeWidth="0.8" strokeLinecap="round" opacity="0.5" />
+      <path d="M12 5C12 9 12 14 12 19.5" stroke="#16a34a" strokeWidth="0.8" strokeLinecap="round" opacity="0.5" />
+      <path d="M15 8C15.5 11 15.5 15 15 18" stroke="#16a34a" strokeWidth="0.8" strokeLinecap="round" opacity="0.5" />
+      {/* Highlight dot */}
+      <circle cx="9" cy="10" r="1.5" fill="#4ade80" opacity="0.6" />
     </svg>
   ),
 };
