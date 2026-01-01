@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Game } from '@/lib/games';
 
 const statusStyles = {
@@ -13,6 +12,32 @@ const statusLabels = {
   'coming-soon': 'Coming Soon',
 };
 
+function GameIcon({ game }: { game: Game }) {
+  // Use emoji fallback for games without custom icons
+  if (game.icon.startsWith('emoji:')) {
+    const emoji = game.icon.replace('emoji:', '');
+    return (
+      <div
+        className="w-16 h-16 rounded-xl flex items-center justify-center text-3xl"
+        style={{ background: `linear-gradient(135deg, ${game.accentColor}33, ${game.accentColor}11)` }}
+      >
+        {emoji}
+      </div>
+    );
+  }
+
+  // Default image handling for custom icons
+  return (
+    <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-zinc-800 flex-shrink-0">
+      <img
+        src={game.icon}
+        alt={game.name}
+        className="object-cover w-full h-full"
+      />
+    </div>
+  );
+}
+
 export default function GameCard({ game }: { game: Game }) {
   return (
     <a
@@ -22,15 +47,7 @@ export default function GameCard({ game }: { game: Game }) {
       className="group block bg-card border border-border rounded-2xl p-4 transition-all duration-200 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/5"
     >
       <div className="flex items-start gap-4">
-        <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-zinc-800 flex-shrink-0">
-          <Image
-            src={game.icon}
-            alt={game.name}
-            fill
-            className="object-cover"
-            sizes="64px"
-          />
-        </div>
+        <GameIcon game={game} />
         <div className="flex-1 min-w-0">
           <h3 className="font-bold text-white text-lg group-hover:text-accent transition-colors">
             {game.name}
