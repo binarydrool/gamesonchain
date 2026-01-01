@@ -15,18 +15,20 @@ const statusLabels = {
 // SVG icon components for games
 const gameIcons: Record<string, React.ReactNode> = {
   seedling: (
-    <svg viewBox="0 0 24 24" fill="none" className="w-11 h-11">
-      {/* Seed body - fat teardrop, pointed top */}
-      <path
-        d="M12 3C12 3 6 9 6 14.5C6 18.5 8.5 21 12 21C15.5 21 18 18.5 18 14.5C18 9 12 3 12 3Z"
-        fill="#22c55e"
-      />
-      {/* Vertical stripes */}
-      <path d="M9 8C8.5 11 8.5 15 9 18" stroke="#16a34a" strokeWidth="0.8" strokeLinecap="round" opacity="0.5" />
-      <path d="M12 5C12 9 12 14 12 19.5" stroke="#16a34a" strokeWidth="0.8" strokeLinecap="round" opacity="0.5" />
-      <path d="M15 8C15.5 11 15.5 15 15 18" stroke="#16a34a" strokeWidth="0.8" strokeLinecap="round" opacity="0.5" />
-      {/* Highlight dot */}
-      <circle cx="9" cy="10" r="1.5" fill="#4ade80" opacity="0.6" />
+    <svg viewBox="0 0 24 24" fill="none" className="w-12 h-12">
+      <g transform="rotate(-20 12 12)">
+        {/* Seed body - fat, short, pointed top */}
+        <path
+          d="M12 5C12 5 5 10 5 14C5 18.5 8 20 12 20C16 20 19 18.5 19 14C19 10 12 5 12 5Z"
+          fill="#22c55e"
+        />
+        {/* Vertical stripes */}
+        <path d="M9 9.5C8.5 12 8.5 15 9 17.5" stroke="#16a34a" strokeWidth="0.8" strokeLinecap="round" opacity="0.5" />
+        <path d="M12 7C12 10 12 13 12 18.5" stroke="#16a34a" strokeWidth="0.8" strokeLinecap="round" opacity="0.5" />
+        <path d="M15 9.5C15.5 12 15.5 15 15 17.5" stroke="#16a34a" strokeWidth="0.8" strokeLinecap="round" opacity="0.5" />
+        {/* Highlight dot */}
+        <circle cx="8.5" cy="11" r="1.5" fill="#4ade80" opacity="0.6" />
+      </g>
     </svg>
   ),
 };
