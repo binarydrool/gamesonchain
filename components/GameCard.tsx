@@ -16,15 +16,17 @@ const statusLabels = {
 const gameIcons: Record<string, React.ReactNode> = {
   seedling: (
     <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
+      {/* Cannabis leaf / bud shape */}
       <path
-        d="M12 22V12M12 12C12 12 12 8 8 4C8 4 8 10 12 12ZM12 12C12 12 12 8 16 4C16 4 16 10 12 12Z"
-        stroke="#22c55e"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+        d="M12 3C12 3 8 7 8 12C8 14.5 9.5 16.5 12 17C14.5 16.5 16 14.5 16 12C16 7 12 3 12 3Z"
+        fill="#22c55e"
       />
       <path
-        d="M12 22C12 22 7 20 7 16"
+        d="M12 6C12 6 6 8 5 13C5 13 8 12 12 14C16 12 19 13 19 13C18 8 12 6 12 6Z"
+        fill="#16a34a"
+      />
+      <path
+        d="M12 14V21"
         stroke="#22c55e"
         strokeWidth="2"
         strokeLinecap="round"
