@@ -15,21 +15,25 @@ const statusLabels = {
 // SVG icon components for games
 const gameIcons: Record<string, React.ReactNode> = {
   seedling: (
-    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
-      {/* Cannabis leaf / bud shape */}
-      <path
-        d="M12 3C12 3 8 7 8 12C8 14.5 9.5 16.5 12 17C14.5 16.5 16 14.5 16 12C16 7 12 3 12 3Z"
+    <svg viewBox="0 0 24 24" fill="none" className="w-9 h-9">
+      {/* Simple seed shape */}
+      <ellipse
+        cx="12"
+        cy="13"
+        rx="5"
+        ry="7"
         fill="#22c55e"
+        transform="rotate(-15 12 13)"
       />
-      <path
-        d="M12 6C12 6 6 8 5 13C5 13 8 12 12 14C16 12 19 13 19 13C18 8 12 6 12 6Z"
-        fill="#16a34a"
-      />
-      <path
-        d="M12 14V21"
-        stroke="#22c55e"
-        strokeWidth="2"
-        strokeLinecap="round"
+      {/* Seed highlight */}
+      <ellipse
+        cx="10.5"
+        cy="11"
+        rx="1.5"
+        ry="2.5"
+        fill="#4ade80"
+        transform="rotate(-15 10.5 11)"
+        opacity="0.6"
       />
     </svg>
   ),
