@@ -17,7 +17,7 @@ export const games: Game[] = [
     name: 'digiBUDZ',
     tagline: 'Skill-based cannabis growing simulation',
     url: 'https://digibudz.xyz',
-    icon: 'emoji:🌱',
+    icon: 'icon:seedling',
     status: 'testnet',
     chain: 'Base',
     accentColor: '#22c55e'

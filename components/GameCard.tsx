@@ -12,16 +12,38 @@ const statusLabels = {
   'coming-soon': 'Coming Soon',
 };
 
+// SVG icon components for games
+const gameIcons: Record<string, React.ReactNode> = {
+  seedling: (
+    <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10">
+      <path
+        d="M12 22V12M12 12C12 12 12 8 8 4C8 4 8 10 12 12ZM12 12C12 12 12 8 16 4C16 4 16 10 12 12Z"
+        stroke="#22c55e"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 22C12 22 7 20 7 16"
+        stroke="#22c55e"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  ),
+};
+
 function GameIcon({ game }: { game: Game }) {
-  // Use emoji fallback for games without custom icons
-  if (game.icon.startsWith('emoji:')) {
-    const emoji = game.icon.replace('emoji:', '');
+  // Use SVG icon for games with icon:iconName format
+  if (game.icon.startsWith('icon:')) {
+    const iconName = game.icon.replace('icon:', '');
+    const icon = gameIcons[iconName];
     return (
       <div
-        className="w-16 h-16 rounded-xl flex items-center justify-center text-3xl"
+        className="w-16 h-16 rounded-xl flex items-center justify-center"
         style={{ background: `linear-gradient(135deg, ${game.accentColor}33, ${game.accentColor}11)` }}
       >
-        {emoji}
+        {icon}
       </div>
     );
   }

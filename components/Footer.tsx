@@ -34,17 +34,14 @@ export default function Footer() {
           </a>
         </div>
         <a
-          href="mailto:binarydrool@protonmail.com"
-          className="text-muted hover:text-white transition-colors text-sm inline-block"
-        >
-          binarydrool@protonmail.com
-        </a>
-        <a
           href="https://console.optimism.io/faucet"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted/70 hover:text-accent transition-colors text-sm inline-flex items-center gap-1"
+          className="text-muted/70 hover:text-accent transition-colors text-sm inline-flex items-center gap-2"
         >
+          <svg className="w-4 h-4" viewBox="0 0 320 512" fill="currentColor">
+            <path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z" />
+          </svg>
           Get Testnet ETH
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -53,6 +50,12 @@ export default function Footer() {
         <p className="text-muted text-sm">
           &copy; 2025 GamesOnChain LLC
         </p>
+        <a
+          href="mailto:binarydrool@protonmail.com"
+          className="text-muted/60 hover:text-white transition-colors text-xs inline-block"
+        >
+          binarydrool@protonmail.com
+        </a>
       </div>
     </footer>
   );
