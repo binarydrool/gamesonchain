@@ -10,12 +10,17 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        {/* Top row: Logo + Search */}
+        {/* Top row: Logo + Tagline + Search */}
         <div className="flex items-center gap-4 h-16">
-          <a href="/" className="text-xl font-bold tracking-tight shrink-0">
-            <span className="text-white">Games</span>
-            <span className="text-accent">OnChain</span>
-          </a>
+          <div className="shrink-0">
+            <a href="/" className="text-xl font-bold tracking-tight">
+              <span className="text-white">Games</span>
+              <span className="text-accent">OnChain</span>
+            </a>
+            <p className="text-muted text-xs">
+              True ownership. Real rewards. No compromise.
+            </p>
+          </div>
 
           {/* Search bar */}
           <div className="flex-1 max-w-md ml-auto">
@@ -42,11 +47,8 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Bottom row: Tagline + Filters */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4">
-          <p className="text-muted text-sm">
-            Web3 games with true ownership
-          </p>
+        {/* Filters row */}
+        <div className="flex items-center pb-4">
           <div className="flex flex-wrap gap-1.5">
             {filters.map((filter) => (
               <button
