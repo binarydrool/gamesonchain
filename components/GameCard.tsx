@@ -85,7 +85,7 @@ export default function GameCard({ game }: { game: Game }) {
     >
       {/* Card with colored border */}
       <div
-        className="game-card rounded-2xl p-[3px]"
+        className="rounded-2xl p-[3px] transition-transform duration-200 group-hover:scale-[1.02]"
         style={{
           background: `linear-gradient(180deg, ${game.accentColor}40 0%, ${game.accentColor}20 100%)`,
           '--card-glow-color': game.accentColor,

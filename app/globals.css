@@ -26,11 +26,11 @@ body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
-/* Magical Play Button */
+/* Play Button */
 .play-btn {
   position: relative;
   overflow: hidden;
-  transition: all 0.15s ease-out;
+  transition: background 0.2s ease-out, color 0.2s ease-out;
 }
 
 .play-btn::before {
@@ -40,21 +40,19 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.4) 50%,
     transparent 100%
   );
   transform: translateX(-100%);
-  transition: none;
 }
 
 .play-btn:hover {
   background: var(--btn-glow-color, #22c55e) !important;
   color: black !important;
-  transition: all 0.2s ease-out;
 }
 
 .play-btn:hover::before {
-  animation: shimmer 0.6s ease-out forwards;
+  animation: shimmer 0.5s ease-out forwards;
 }
 
 @keyframes shimmer {
@@ -63,52 +61,5 @@ body {
   }
   100% {
     transform: translateX(100%);
-  }
-}
-
-/* Card with traveling border glow */
-@property --glow-angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-.game-card {
-  position: relative;
-  border-radius: 1rem;
-  --glow-angle: 0deg;
-}
-
-.game-card::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-  background: conic-gradient(
-    from var(--glow-angle),
-    transparent 0%,
-    transparent 45%,
-    var(--card-glow-color, #22c55e) 48%,
-    var(--card-glow-color, #22c55e) 52%,
-    transparent 55%,
-    transparent 100%
-  );
-  opacity: 0;
-  transition: opacity 0.15s ease-out;
-  z-index: -1;
-}
-
-.game-card:hover::before {
-  opacity: 1;
-  animation: rotate-glow 3s linear infinite;
-  transition: opacity 0.3s ease-in;
-}
-
-@keyframes rotate-glow {
-  from {
-    --glow-angle: 0deg;
-  }
-  to {
-    --glow-angle: 360deg;
   }
 }
