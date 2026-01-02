@@ -33,20 +33,6 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <a
-          href="https://console.optimism.io/faucet"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-accent hover:text-accent/80 transition-colors text-sm inline-flex items-center gap-2"
-        >
-          <svg className="w-4 h-4" viewBox="0 0 320 512" fill="currentColor">
-            <path d="M311.9 260.8L160 353.6 8 260.8 160 0l151.9 260.8zM160 383.4L8 290.6 160 512l152-221.4-152 92.8z" />
-          </svg>
-          Get Testnet ETH
-          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
         <p className="text-muted/60 text-xs">
           Web3 Games. Fully Onchain.
         </p>
