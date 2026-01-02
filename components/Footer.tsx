@@ -50,12 +50,9 @@ export default function Footer() {
         <p className="text-muted text-sm">
           &copy; 2025 GamesOnChain LLC
         </p>
-        <a
-          href="mailto:binarydrool@protonmail.com"
-          className="text-muted/60 hover:text-white transition-colors text-xs inline-block"
-        >
-          binarydrool@protonmail.com
-        </a>
+        <p className="text-muted/60 text-xs">
+          Web3 Games. Fully Onchain.
+        </p>
       </div>
     </footer>
   );
