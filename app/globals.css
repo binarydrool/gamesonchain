@@ -48,9 +48,9 @@ body {
 }
 
 .play-btn:hover {
-  transform: scale(1.02);
-  box-shadow: 0 0 20px var(--btn-glow-color, #22c55e);
-  transition: all 0.3s ease-out;
+  background: var(--btn-glow-color, #22c55e) !important;
+  color: black !important;
+  transition: all 0.2s ease-out;
 }
 
 .play-btn:hover::before {
