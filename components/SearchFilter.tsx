@@ -8,7 +8,7 @@ export default function SearchFilter() {
   const [activeFilter, setActiveFilter] = useState<string>('All');
 
   return (
-    <section className="w-full py-8 px-4 sm:px-6">
+    <section className="w-full py-4 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto space-y-4">
         <div className="relative">
           <input
