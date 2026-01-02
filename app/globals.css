@@ -82,15 +82,15 @@ body {
 .game-card::before {
   content: '';
   position: absolute;
-  inset: -3px;
+  inset: -2px;
   border-radius: inherit;
   background: conic-gradient(
     from var(--glow-angle),
     transparent 0%,
-    transparent 25%,
-    var(--card-glow-color, #22c55e) 30%,
-    var(--card-glow-color, #22c55e) 35%,
-    transparent 40%,
+    transparent 45%,
+    var(--card-glow-color, #22c55e) 48%,
+    var(--card-glow-color, #22c55e) 52%,
+    transparent 55%,
     transparent 100%
   );
   opacity: 0;
@@ -100,7 +100,7 @@ body {
 
 .game-card:hover::before {
   opacity: 1;
-  animation: rotate-glow 1.5s linear infinite;
+  animation: rotate-glow 3s linear infinite;
   transition: opacity 0.3s ease-in;
 }
 
