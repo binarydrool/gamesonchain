@@ -40,22 +40,37 @@ function GameArtwork({ game }: { game: Game }) {
     const icon = gameIcons[iconName];
     return (
       <div
-        className="w-full aspect-square rounded-t-xl flex items-center justify-center"
+        className="relative w-full aspect-square rounded-t-xl flex items-center justify-center"
         style={{ background: `linear-gradient(180deg, ${game.accentColor}22 0%, ${game.accentColor}08 100%)` }}
       >
         {icon}
+        <GameOverlay game={game} />
       </div>
     );
   }
 
   // Image handling - crops to square
   return (
-    <div className="w-full aspect-square rounded-t-xl overflow-hidden bg-zinc-800">
+    <div className="relative w-full aspect-square rounded-t-xl overflow-hidden bg-zinc-800">
       <img
         src={game.icon}
         alt={game.name}
         className="object-cover w-full h-full"
       />
+      <GameOverlay game={game} />
+    </div>
+  );
+}
+
+function GameOverlay({ game }: { game: Game }) {
+  return (
+    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-3 pt-10">
+      <h3 className="font-bold text-white text-sm sm:text-base drop-shadow-lg">
+        {game.name}
+      </h3>
+      <p className="text-white/80 text-xs sm:text-sm mt-0.5 drop-shadow">
+        {game.tagline}
+      </p>
     </div>
   );
 }
@@ -79,18 +94,10 @@ export default function GameCard({ game }: { game: Game }) {
           {/* Artwork area */}
           <GameArtwork game={game} />
 
-          {/* Info and Play button */}
+          {/* Badges and Play button */}
           <div className="p-3">
-            {/* Title */}
-            <h3 className="font-bold text-white text-sm sm:text-base group-hover:text-accent transition-colors">
-              {game.name}
-            </h3>
-            {/* Tagline - full text */}
-            <p className="text-muted text-xs sm:text-sm mt-1">
-              {game.tagline}
-            </p>
             {/* Badges */}
-            <div className="flex flex-wrap items-center gap-1.5 mt-2">
+            <div className="flex flex-wrap items-center gap-1.5">
               <span
                 className={`px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium border ${statusStyles[game.status]}`}
               >
