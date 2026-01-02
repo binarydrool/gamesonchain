@@ -12,10 +12,10 @@ const statusLabels = {
   'coming-soon': 'Coming Soon',
 };
 
-// SVG icon components for games
+// SVG icon components for games - larger size for card display
 const gameIcons: Record<string, React.ReactNode> = {
   seedling: (
-    <svg viewBox="0 0 24 24" fill="none" className="w-12 h-12">
+    <svg viewBox="0 0 24 24" fill="none" className="w-24 h-24 sm:w-32 sm:h-32">
       <g transform="rotate(-15 12 12)">
         {/* Seed body - balanced teardrop */}
         <path
@@ -33,15 +33,15 @@ const gameIcons: Record<string, React.ReactNode> = {
   ),
 };
 
-function GameIcon({ game }: { game: Game }) {
+function GameArtwork({ game }: { game: Game }) {
   // Use SVG icon for games with icon:iconName format
   if (game.icon.startsWith('icon:')) {
     const iconName = game.icon.replace('icon:', '');
     const icon = gameIcons[iconName];
     return (
       <div
-        className="w-16 h-16 rounded-xl flex items-center justify-center"
-        style={{ background: `linear-gradient(135deg, ${game.accentColor}33, ${game.accentColor}11)` }}
+        className="w-full aspect-[3/4] rounded-t-2xl flex items-center justify-center"
+        style={{ background: `linear-gradient(180deg, ${game.accentColor}22 0%, ${game.accentColor}08 100%)` }}
       >
         {icon}
       </div>
@@ -50,7 +50,7 @@ function GameIcon({ game }: { game: Game }) {
 
   // Default image handling for custom icons
   return (
-    <div className="relative w-16 h-16 rounded-xl overflow-hidden bg-zinc-800 flex-shrink-0">
+    <div className="w-full aspect-[3/4] rounded-t-2xl overflow-hidden bg-zinc-800">
       <img
         src={game.icon}
         alt={game.name}
@@ -66,30 +66,58 @@ export default function GameCard({ game }: { game: Game }) {
       href={game.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="group block bg-card border border-border rounded-2xl p-4 transition-all duration-200 hover:-translate-y-1 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/5"
+      className="group block"
     >
-      <div className="flex items-start gap-4">
-        <GameIcon game={game} />
-        <div className="flex-1 min-w-0">
-          <h3 className="font-bold text-white text-lg group-hover:text-accent transition-colors">
-            {game.name}
-          </h3>
-          <p className="text-muted text-sm line-clamp-1 mt-0.5">
-            {game.tagline}
-          </p>
-          <div className="flex items-center gap-2 mt-3">
-            <span
-              className={`px-2.5 py-0.5 rounded-full text-xs font-medium border ${statusStyles[game.status]}`}
+      {/* Card with colored border */}
+      <div
+        className="rounded-2xl p-[3px] transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl"
+        style={{
+          background: `linear-gradient(180deg, ${game.accentColor}60 0%, ${game.accentColor}30 100%)`,
+        }}
+      >
+        <div className="bg-zinc-900 rounded-[13px] overflow-hidden">
+          {/* Artwork area */}
+          <GameArtwork game={game} />
+
+          {/* Play button */}
+          <div className="p-3">
+            <button
+              className="w-full py-2.5 rounded-xl font-semibold text-sm transition-all duration-200"
+              style={{
+                background: `${game.accentColor}15`,
+                color: game.accentColor,
+              }}
             >
-              {statusLabels[game.status]}
-            </span>
-            <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
-              <svg className="w-3 h-3" viewBox="0 0 24 24" fill="currentColor">
-                <circle cx="12" cy="12" r="10" />
-              </svg>
-              {game.chain}
-            </span>
+              Play
+            </button>
           </div>
+        </div>
+      </div>
+
+      {/* Title and meta below card */}
+      <div className="mt-3 px-1">
+        <div className="flex items-start justify-between gap-2">
+          <div className="min-w-0">
+            <h3 className="font-bold text-white text-sm sm:text-base truncate group-hover:text-accent transition-colors">
+              {game.name}
+            </h3>
+            <p className="text-muted text-xs sm:text-sm truncate mt-0.5">
+              {game.tagline}
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2 mt-2">
+          <span
+            className={`px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium border ${statusStyles[game.status]}`}
+          >
+            {statusLabels[game.status]}
+          </span>
+          <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
+            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3" viewBox="0 0 24 24" fill="currentColor">
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+            {game.chain}
+          </span>
         </div>
       </div>
     </a>
