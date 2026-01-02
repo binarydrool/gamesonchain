@@ -85,10 +85,11 @@ export default function GameCard({ game }: { game: Game }) {
     >
       {/* Card with colored border */}
       <div
-        className="rounded-2xl p-[3px] transition-all duration-200 group-hover:scale-[1.02] group-hover:shadow-xl"
+        className="game-card rounded-2xl p-[3px] transition-all duration-200 group-hover:scale-[1.02]"
         style={{
-          background: `linear-gradient(180deg, ${game.accentColor}60 0%, ${game.accentColor}30 100%)`,
-        }}
+          background: `linear-gradient(180deg, ${game.accentColor}40 0%, ${game.accentColor}20 100%)`,
+          '--card-glow-color': game.accentColor,
+        } as React.CSSProperties}
       >
         <div className="bg-zinc-900 rounded-[13px] overflow-hidden">
           {/* Artwork area */}
@@ -120,10 +121,6 @@ export default function GameCard({ game }: { game: Game }) {
               } as React.CSSProperties}
             >
               <span className="relative z-10">Play</span>
-              <span className="sparkle" />
-              <span className="sparkle" />
-              <span className="sparkle" />
-              <span className="sparkle" />
             </button>
           </div>
         </div>
