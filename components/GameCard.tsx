@@ -65,7 +65,7 @@ function GameArtwork({ game }: { game: Game }) {
 function GameOverlay({ game }: { game: Game }) {
   return (
     <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent p-3 pt-10">
-      <h3 className="font-bold text-white text-sm sm:text-base drop-shadow-lg">
+      <h3 className="font-bold text-white text-xl sm:text-2xl drop-shadow-lg">
         {game.name}
       </h3>
       <p className="text-white/80 text-xs sm:text-sm mt-0.5 drop-shadow">
