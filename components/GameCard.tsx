@@ -79,10 +79,33 @@ export default function GameCard({ game }: { game: Game }) {
           {/* Artwork area */}
           <GameArtwork game={game} />
 
-          {/* Play button */}
+          {/* Info and Play button */}
           <div className="p-3">
+            {/* Title */}
+            <h3 className="font-bold text-white text-sm sm:text-base group-hover:text-accent transition-colors">
+              {game.name}
+            </h3>
+            {/* Tagline - full text */}
+            <p className="text-muted text-xs sm:text-sm mt-1">
+              {game.tagline}
+            </p>
+            {/* Badges */}
+            <div className="flex flex-wrap items-center gap-1.5 mt-2">
+              <span
+                className={`px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium border ${statusStyles[game.status]}`}
+              >
+                {statusLabels[game.status]}
+              </span>
+              <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3" viewBox="0 0 24 24" fill="currentColor">
+                  <circle cx="12" cy="12" r="10" />
+                </svg>
+                {game.chain}
+              </span>
+            </div>
+            {/* Play button */}
             <button
-              className="w-full py-2.5 rounded-xl font-semibold text-sm transition-all duration-200"
+              className="w-full py-2.5 mt-3 rounded-xl font-semibold text-sm transition-all duration-200"
               style={{
                 background: `${game.accentColor}15`,
                 color: game.accentColor,
@@ -91,33 +114,6 @@ export default function GameCard({ game }: { game: Game }) {
               Play
             </button>
           </div>
-        </div>
-      </div>
-
-      {/* Title and meta below card */}
-      <div className="mt-3 px-1">
-        <div className="flex items-start justify-between gap-2">
-          <div className="min-w-0">
-            <h3 className="font-bold text-white text-sm sm:text-base truncate group-hover:text-accent transition-colors">
-              {game.name}
-            </h3>
-            <p className="text-muted text-xs sm:text-sm truncate mt-0.5">
-              {game.tagline}
-            </p>
-          </div>
-        </div>
-        <div className="flex items-center gap-2 mt-2">
-          <span
-            className={`px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium border ${statusStyles[game.status]}`}
-          >
-            {statusLabels[game.status]}
-          </span>
-          <span className="flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium bg-blue-500/20 text-blue-400 border border-blue-500/30">
-            <svg className="w-2.5 h-2.5 sm:w-3 sm:h-3" viewBox="0 0 24 24" fill="currentColor">
-              <circle cx="12" cy="12" r="10" />
-            </svg>
-            {game.chain}
-          </span>
         </div>
       </div>
     </a>
