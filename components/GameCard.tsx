@@ -112,13 +112,18 @@ export default function GameCard({ game }: { game: Game }) {
             </div>
             {/* Play button */}
             <button
-              className="w-full py-2.5 mt-3 rounded-xl font-semibold text-sm transition-all duration-200"
+              className="play-btn w-full py-2.5 mt-3 rounded-xl font-semibold text-sm"
               style={{
-                background: `${game.accentColor}15`,
+                background: `${game.accentColor}20`,
                 color: game.accentColor,
-              }}
+                '--btn-glow-color': game.accentColor,
+              } as React.CSSProperties}
             >
-              Play
+              <span className="relative z-10">Play</span>
+              <span className="sparkle" />
+              <span className="sparkle" />
+              <span className="sparkle" />
+              <span className="sparkle" />
             </button>
           </div>
         </div>
