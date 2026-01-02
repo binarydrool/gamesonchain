@@ -40,7 +40,7 @@ function GameArtwork({ game }: { game: Game }) {
     const icon = gameIcons[iconName];
     return (
       <div
-        className="w-full aspect-[3/4] rounded-t-2xl flex items-center justify-center"
+        className="w-full aspect-square rounded-t-xl flex items-center justify-center"
         style={{ background: `linear-gradient(180deg, ${game.accentColor}22 0%, ${game.accentColor}08 100%)` }}
       >
         {icon}
@@ -48,9 +48,9 @@ function GameArtwork({ game }: { game: Game }) {
     );
   }
 
-  // Default image handling for custom icons
+  // Image handling - crops to square
   return (
-    <div className="w-full aspect-[3/4] rounded-t-2xl overflow-hidden bg-zinc-800">
+    <div className="w-full aspect-square rounded-t-xl overflow-hidden bg-zinc-800">
       <img
         src={game.icon}
         alt={game.name}
