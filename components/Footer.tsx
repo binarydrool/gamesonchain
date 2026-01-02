@@ -47,9 +47,6 @@ export default function Footer() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </a>
-        <p className="text-muted text-sm">
-          &copy; 2025 GamesOnChain LLC
-        </p>
         <p className="text-muted/60 text-xs">
           Web3 Games. Fully Onchain.
         </p>
