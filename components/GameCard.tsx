@@ -59,10 +59,10 @@ function GameArtwork({ game }: { game: Game }) {
     const emoji = game.icon.replace('emoji:', '');
     return (
       <div
-        className="relative w-full aspect-square rounded-t-xl flex items-center justify-center"
+        className="relative w-full aspect-square rounded-t-xl flex items-start justify-center pt-6 sm:pt-8"
         style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #4c1d95 60%, #581c87 100%)' }}
       >
-        <span className="text-7xl sm:text-8xl drop-shadow-lg">{emoji}</span>
+        <span className="text-8xl sm:text-9xl drop-shadow-lg">{emoji}</span>
         <GameOverlay game={game} />
       </div>
     );
