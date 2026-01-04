@@ -17,7 +17,7 @@ export const games: Game[] = [
     name: 'digiSHROOMS',
     tagline: 'Cultivate consciousness, harvest rewards',
     url: 'https://digishrooms.xyz',
-    icon: 'icon:mushroom',
+    icon: 'emoji:🍄',
     status: 'testnet',
     chain: 'Base',
     accentColor: '#a855f7'
