@@ -1,20 +1,3 @@
-function SpinningCube() {
-  return (
-    <div className="flex justify-center mb-6">
-      <div className="cube-scene">
-        <div className="cube">
-          <div className="cube-face front">ᛉ</div>
-          <div className="cube-face back">ᛟ</div>
-          <div className="cube-face right">ᚨ</div>
-          <div className="cube-face left">ᚱ</div>
-          <div className="cube-face top">𐍈</div>
-          <div className="cube-face bottom">⨂</div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export default function Header() {
   return (
     <header className="w-full pt-8 pb-6 px-4 sm:px-6 border-b border-border/50">
@@ -42,7 +25,6 @@ export default function Header() {
 
         {/* Hero tagline */}
         <div className="text-center py-6 sm:py-8">
-          <SpinningCube />
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
             <span className="text-white">Web3 Games.</span>{' '}
             <span className="text-white">Fully Onchain.</span>

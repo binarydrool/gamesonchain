@@ -17,7 +17,7 @@ export const games: Game[] = [
     name: 'digiSHROOMS',
     tagline: 'Cultivate consciousness, harvest rewards',
     url: 'https://digishrooms.xyz',
-    icon: 'emoji:🍄',
+    icon: '/games/digishrooms.png',
     status: 'testnet',
     chain: 'Base',
     accentColor: '#a855f7'
@@ -27,7 +27,7 @@ export const games: Game[] = [
     name: 'digiBUDS',
     tagline: 'Skill-based cannabis growing simulation',
     url: 'https://digibuds.xyz',
-    icon: 'emoji:🌿',
+    icon: '/games/digibuds.png',
     status: 'testnet',
     chain: 'Base',
     accentColor: '#22c55e'
