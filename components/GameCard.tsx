@@ -65,10 +65,10 @@ function GameArtwork({ game }: { game: Game }) {
     const bg = gradients[game.id] || `linear-gradient(135deg, ${game.accentColor}40 0%, ${game.accentColor}80 100%)`;
     return (
       <div
-        className="relative w-full aspect-square rounded-t-xl flex items-start justify-center pt-4 sm:pt-8"
+        className="relative w-full aspect-square rounded-t-xl flex items-center justify-center"
         style={{ background: bg }}
       >
-        <span className="text-6xl sm:text-8xl md:text-9xl drop-shadow-lg">{emoji}</span>
+        <span className="text-[8rem] sm:text-[10rem] md:text-[12rem] drop-shadow-lg">{emoji}</span>
         <GameOverlay game={game} />
       </div>
     );
