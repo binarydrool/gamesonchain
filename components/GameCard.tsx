@@ -68,7 +68,7 @@ function GameArtwork({ game }: { game: Game }) {
         className="relative w-full aspect-square rounded-t-xl flex items-center justify-center"
         style={{ background: bg }}
       >
-        <span className="text-[8rem] sm:text-[10rem] md:text-[12rem] drop-shadow-lg">{emoji}</span>
+        <span className="text-[12rem] sm:text-[14rem] md:text-[16rem] drop-shadow-lg">{emoji}</span>
         <GameOverlay game={game} />
       </div>
     );
