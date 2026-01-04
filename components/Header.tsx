@@ -1,53 +1,16 @@
 function SpinningCube() {
   return (
     <div className="flex justify-center mb-6">
-      <div className="cube-container">
-        <div className="cube">
-          <div className="cube-face cube-front">X</div>
-          <div className="cube-face cube-back">X</div>
-          <div className="cube-face cube-right">X</div>
-          <div className="cube-face cube-left">X</div>
-          <div className="cube-face cube-top">X</div>
-          <div className="cube-face cube-bottom">X</div>
-        </div>
-      </div>
-      <style jsx>{`
-        .cube-container {
-          width: 60px;
-          height: 60px;
-          perspective: 200px;
-        }
-        .cube {
-          width: 100%;
-          height: 100%;
-          position: relative;
-          transform-style: preserve-3d;
-          animation: spin 8s infinite linear;
-        }
-        .cube-face {
-          position: absolute;
-          width: 60px;
-          height: 60px;
-          background: rgba(168, 85, 247, 0.15);
-          border: 2px solid rgba(168, 85, 247, 0.5);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 24px;
-          font-weight: bold;
-          color: rgba(168, 85, 247, 0.8);
-        }
-        .cube-front  { transform: rotateY(0deg) translateZ(30px); }
-        .cube-back   { transform: rotateY(180deg) translateZ(30px); }
-        .cube-right  { transform: rotateY(90deg) translateZ(30px); }
-        .cube-left   { transform: rotateY(-90deg) translateZ(30px); }
-        .cube-top    { transform: rotateX(90deg) translateZ(30px); }
-        .cube-bottom { transform: rotateX(-90deg) translateZ(30px); }
-        @keyframes spin {
-          from { transform: rotateX(0deg) rotateY(0deg); }
-          to { transform: rotateX(360deg) rotateY(360deg); }
-        }
-      `}</style>
+      <svg width="60" height="60" viewBox="0 0 100 100" className="animate-spin-slow">
+        <g stroke="rgba(168, 85, 247, 0.6)" strokeWidth="2" fill="rgba(168, 85, 247, 0.15)">
+          {/* Front face */}
+          <polygon points="30,30 70,30 70,70 30,70" />
+          {/* Top face */}
+          <polygon points="30,30 70,30 85,15 45,15" />
+          {/* Right face */}
+          <polygon points="70,30 85,15 85,55 70,70" />
+        </g>
+      </svg>
     </div>
   );
 }
