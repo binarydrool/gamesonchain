@@ -31,5 +31,15 @@ export const games: Game[] = [
     status: 'testnet',
     chain: 'Base',
     accentColor: '#22c55e'
+  },
+  {
+    id: 'cooter',
+    name: 'Cooter',
+    tagline: '3D mind tester game',
+    url: 'https://cooter.xyz',
+    icon: '/games/cooter.png',
+    status: 'testnet',
+    chain: 'Base',
+    accentColor: '#d4af37'
   }
 ];
