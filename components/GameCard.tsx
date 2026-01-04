@@ -57,10 +57,16 @@ function GameArtwork({ game }: { game: Game }) {
   // Use emoji for games with emoji:X format
   if (game.icon.startsWith('emoji:')) {
     const emoji = game.icon.replace('emoji:', '');
+    // Custom gradients per game
+    const gradients: Record<string, string> = {
+      digishrooms: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #4c1d95 60%, #581c87 100%)',
+      digibudz: 'linear-gradient(135deg, #052e16 0%, #14532d 30%, #166534 60%, #15803d 100%)',
+    };
+    const bg = gradients[game.id] || `linear-gradient(135deg, ${game.accentColor}40 0%, ${game.accentColor}80 100%)`;
     return (
       <div
         className="relative w-full aspect-square rounded-t-xl flex items-start justify-center pt-6 sm:pt-8"
-        style={{ background: 'linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #4c1d95 60%, #581c87 100%)' }}
+        style={{ background: bg }}
       >
         <span className="text-8xl sm:text-9xl drop-shadow-lg">{emoji}</span>
         <GameOverlay game={game} />
