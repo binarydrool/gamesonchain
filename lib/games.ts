@@ -23,10 +23,10 @@ export const games: Game[] = [
     accentColor: '#a855f7'
   },
   {
-    id: 'digibudz',
-    name: 'digiBUDZ',
+    id: 'digibuds',
+    name: 'digiBUDS',
     tagline: 'Skill-based cannabis growing simulation',
-    url: 'https://digibudz.xyz',
+    url: 'https://digibuds.xyz',
     icon: 'emoji:🌿',
     status: 'testnet',
     chain: 'Base',
