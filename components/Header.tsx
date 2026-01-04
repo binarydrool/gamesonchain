@@ -24,12 +24,12 @@ export default function Header() {
         </div>
 
         {/* Hero tagline */}
-        <div className="text-center py-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-4">
+        <div className="text-center py-6 sm:py-8">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-3 sm:mb-4">
             <span className="text-white">Web3 Games.</span>{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">Fully Onchain.</span>
           </h1>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-sm sm:text-lg max-w-2xl mx-auto">
             Discover games built entirely onchain. True ownership. Real rewards.
           </p>
         </div>
