@@ -1,16 +1,16 @@
 function SpinningCube() {
   return (
     <div className="flex justify-center mb-6">
-      <svg width="60" height="60" viewBox="0 0 100 100" className="animate-spin-slow">
-        <g stroke="rgba(168, 85, 247, 0.6)" strokeWidth="2" fill="rgba(168, 85, 247, 0.15)">
-          {/* Front face */}
-          <polygon points="30,30 70,30 70,70 30,70" />
-          {/* Top face */}
-          <polygon points="30,30 70,30 85,15 45,15" />
-          {/* Right face */}
-          <polygon points="70,30 85,15 85,55 70,70" />
-        </g>
-      </svg>
+      <div className="cube-scene">
+        <div className="cube">
+          <div className="cube-face front" />
+          <div className="cube-face back" />
+          <div className="cube-face right" />
+          <div className="cube-face left" />
+          <div className="cube-face top" />
+          <div className="cube-face bottom" />
+        </div>
+      </div>
     </div>
   );
 }
