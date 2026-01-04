@@ -3,12 +3,12 @@ function SpinningCube() {
     <div className="flex justify-center mb-6">
       <div className="cube-scene">
         <div className="cube">
-          <div className="cube-face front" />
-          <div className="cube-face back" />
-          <div className="cube-face right" />
-          <div className="cube-face left" />
-          <div className="cube-face top" />
-          <div className="cube-face bottom" />
+          <div className="cube-face front">ᛉ</div>
+          <div className="cube-face back">ᛟ</div>
+          <div className="cube-face right">ᚨ</div>
+          <div className="cube-face left">ᚱ</div>
+          <div className="cube-face top">𐍈</div>
+          <div className="cube-face bottom">⨂</div>
         </div>
       </div>
     </div>
