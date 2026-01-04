@@ -14,6 +14,26 @@ const statusLabels = {
 
 // SVG icon components for games - larger size for card display
 const gameIcons: Record<string, React.ReactNode> = {
+  mushroom: (
+    <svg viewBox="0 0 100 100" fill="none" className="w-24 h-24 sm:w-32 sm:h-32">
+      {/* Mushroom cap */}
+      <ellipse cx="50" cy="40" rx="38" ry="28" fill="#ef4444" />
+      {/* Cap bottom curve */}
+      <path d="M12 40 Q50 55 88 40" stroke="#dc2626" strokeWidth="2" fill="none" />
+      {/* White spots */}
+      <circle cx="35" cy="28" r="8" fill="white" opacity="0.9" />
+      <circle cx="58" cy="22" r="6" fill="white" opacity="0.9" />
+      <circle cx="70" cy="35" r="5" fill="white" opacity="0.9" />
+      <circle cx="28" cy="42" r="4" fill="white" opacity="0.9" />
+      <circle cx="48" cy="38" r="5" fill="white" opacity="0.9" />
+      <circle cx="65" cy="48" r="3" fill="white" opacity="0.9" />
+      {/* Stem */}
+      <path d="M35 52 Q32 70 38 85 L62 85 Q68 70 65 52 Z" fill="#f5f5dc" />
+      {/* Stem shading */}
+      <path d="M42 55 Q40 70 44 82" stroke="#e5e5c3" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
+      <path d="M58 55 Q60 70 56 82" stroke="#e5e5c3" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
+    </svg>
+  ),
   seedling: (
     <svg viewBox="0 0 24 24" fill="none" className="w-24 h-24 sm:w-32 sm:h-32">
       <g transform="rotate(-15 12 12)">

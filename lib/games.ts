@@ -13,6 +13,16 @@ export interface Game {
 
 export const games: Game[] = [
   {
+    id: 'digishrooms',
+    name: 'digiSHROOMS',
+    tagline: 'Cultivate consciousness, harvest rewards',
+    url: 'https://digishrooms.xyz',
+    icon: 'icon:mushroom',
+    status: 'testnet',
+    chain: 'Base',
+    accentColor: '#a855f7'
+  },
+  {
     id: 'digibudz',
     name: 'digiBUDZ',
     tagline: 'Skill-based cannabis growing simulation',
