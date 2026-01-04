@@ -3,7 +3,7 @@ export default function Header() {
     <header className="w-full pt-8 pb-6 px-4 sm:px-6 border-b border-border/50">
       <div className="max-w-6xl mx-auto">
         {/* Logo and nav */}
-        <div className="flex items-center justify-between mb-8">
+        <div className="flex items-center justify-between">
           <a href="/" className="text-2xl font-bold tracking-tight">
             <span className="text-white">Games</span>
             <span className="text-cyan-400">OnChain</span>
@@ -21,14 +21,6 @@ export default function Header() {
               Get Testnet ETH
             </a>
           </nav>
-        </div>
-
-        {/* Hero tagline */}
-        <div className="text-center py-6 sm:py-8">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-            <span className="text-white">Web3 Games.</span>{' '}
-            <span className="text-white">Fully Onchain.</span>
-          </h1>
         </div>
       </div>
     </header>
