@@ -35,7 +35,7 @@ export const games: Game[] = [
   {
     id: 'cooter',
     name: 'Cooter',
-    tagline: '3D mind tester game',
+    tagline: 'Bend time, sharpen your mind',
     url: 'https://cooter.xyz',
     icon: '/games/cooter.png',
     status: 'testnet',
